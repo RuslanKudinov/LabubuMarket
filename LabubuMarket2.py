@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, url_for, request
 
 app = Flask(__name__)
 
-users = {"1": "1", "2": "2"}
+users = {"1": "1", "2": "2","3":"3","4":"4"}
 
 @app.route("/")
 def hello_world():
