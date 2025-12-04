@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Магазин Лабубу</title>
+</head>
+<body>
+    <h1>Добро пожаловать в магазин Лабубу!</h1>
+
+    <div style="float: right;">
+        <a href="{{ url_for('view_cart') }}">Корзина ({{ cart|length }})</a>
+         <a href="/">Выйти</a>
+    </div>
+
+    <h2>Наши товары:</h2>
+    <div>
+        {% for product in products %}
+        <div style="border: 1px solid #ccc; padding: 10px; margin: 10px; display: inline-block;">
+            <h3>{{ product.name }}</h3>
+            <p>Цена: {{ product.price }} руб.</p>
+            <a href="{{ url_for('product_detail', product_id=product.id) }}">Подробнее</a>
+            <a href="{{ url_for('add_to_cart', product_id=product.id) }}">В корзину</a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

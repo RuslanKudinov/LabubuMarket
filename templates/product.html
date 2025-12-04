@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ product.name }}</title>
+</head>
+<body>
+    <a href="{{ url_for('index') }}">Назад к каталогу</a>
+
+    <h1>{{ product.name }}</h1>
+
+    <!-- Добавление картинки продукта -->
+    <img src="{{ url_for('static', filename=product.image) }}"
+         alt="{{ product.name }}"
+         width="300"
+         style="display: block; margin: 20px 0;">
+    <p> {{product.about}} </p>
+    <p>Цена: {{product.price}} руб.</p>
+    <a href="{{ url_for('add_to_cart', product_id=product.id) }}">Добавить в корзину</a>
+    <a href="/">Выйти</a>
+</body>
+</html>
